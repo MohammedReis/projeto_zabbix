@@ -1,0 +1,1 @@
+# Uma tela mais clean para ver alarmes
