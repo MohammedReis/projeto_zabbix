@@ -2,7 +2,6 @@
   "name": "projeto_zabbix",
   "version": "0.1.0",
   "private": true,
-
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -10,12 +9,10 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "6",
     "react-scripts": "5.0.1"
-
-
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
