@@ -8,9 +8,11 @@ import Toolbar from '@mui/material/Toolbar';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import Close from '@mui/icons-material/Close';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { DarkMode } from '../Mode';
+import { CheckboxSelectionGrid } from '../DataGrid';
+import { Filter } from '../Filter';
 
 const drawerWidth = 340;
 
@@ -18,7 +20,6 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
     open?: boolean;
 }>(({ theme, open }) => ({
     flexGrow: 1,
-    padding: theme.spacing(3),
     transition: theme.transitions.create('margin', {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
@@ -108,26 +109,33 @@ export const MenuLateral = () => {
                     '& .MuiDrawer-paper': {
                         width: drawerWidth,
                         boxSizing: 'border-box',
+                        background:theme.palette.primary.main,
                     },
                 }}
                 variant="persistent"
                 anchor="left"
                 open={open}
             >
+                
                 <DrawerHeader>
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === 'ltr' ? (
-                            <ChevronLeftIcon />
+                            <Close sx={{color:theme.palette.primary.contrastText}}/>
                         ) : (
                             <ChevronRightIcon />
                         )}
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
+                <Filter/>
             </Drawer>
+            
             <Main open={open}>
                 <DrawerHeader />
             </Main>
+            <Box sx={{width:"100%"}}>
+            <CheckboxSelectionGrid/>
+            </Box>
         </Box>
     );
 }
